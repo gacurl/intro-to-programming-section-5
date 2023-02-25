@@ -24,7 +24,7 @@ function getRandomNumber(min, max) {
 
 function checkGuess() {
   // Get value from guess input element
-  const guess = parseInt(guessInput.value, 10);
+  let guess = parseInt(guessInput.value, 10);
   attempts = attempts + 1;
 
   hideAllMessages();
@@ -59,14 +59,19 @@ function checkGuess() {
 
   guessInput.value = '';
 
-  resetButton.style.display = '';
+  resetButton.style.display = 'none';
 }
+
+
 
 function hideAllMessages() {
   for (let elementIndex = 0; elementIndex <= messages.length; elementIndex++) {
-    messages[elementIndex] = 'none';
+    console.log(messages.style.display)
+    //messages.style.display = 'none';
   }
 }
+
+console.log("running hideAllMessage() " + hideAllMessages)
 
 function setup() {
   // Get random number
